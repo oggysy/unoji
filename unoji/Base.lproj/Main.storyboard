@@ -1,24 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X3L-Rg-vE8">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="uzura.ttf">
+            <string>uzura_font</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="unoji" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsh-Cd-B7e">
+                                <rect key="frame" x="0.0" y="59" width="393" height="284"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yA-aw-qg9">
+                                        <rect key="frame" x="60" y="-120" width="70" height="300"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RopeImage" translatesAutoresizingMaskIntoConstraints="NO" id="JER-8f-jwg">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="300"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="JER-8f-jwg" firstAttribute="leading" secondItem="7yA-aw-qg9" secondAttribute="leading" id="0Bo-ei-hbd"/>
+                                            <constraint firstAttribute="bottom" secondItem="JER-8f-jwg" secondAttribute="bottom" id="GD9-jI-YEr"/>
+                                            <constraint firstAttribute="trailing" secondItem="JER-8f-jwg" secondAttribute="trailing" id="ZoU-Lh-UwZ"/>
+                                            <constraint firstItem="JER-8f-jwg" firstAttribute="top" secondItem="7yA-aw-qg9" secondAttribute="top" id="aas-aZ-yje"/>
+                                            <constraint firstAttribute="width" constant="70" id="d7Q-fH-e7R"/>
+                                            <constraint firstAttribute="height" constant="300" id="gdA-5F-QDg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7yA-aw-qg9" firstAttribute="leading" secondItem="Lsh-Cd-B7e" secondAttribute="leading" constant="60" id="DUG-zw-nCL"/>
+                                    <constraint firstItem="7yA-aw-qg9" firstAttribute="top" secondItem="Lsh-Cd-B7e" secondAttribute="top" constant="-120" id="iji-JY-esx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OQ-7C-pYJ">
+                                <rect key="frame" x="0.0" y="343" width="393" height="426"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mZQ-J8-aaK">
+                                        <rect key="frame" x="15" y="15.000000000000007" width="363" height="127.66666666666669"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="前のうんちから" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqB-fe-ti5">
+                                                <rect key="frame" x="34.666666666666657" y="0.0" width="294" height="64"/>
+                                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="42"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00日00時間経過" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-KF-x34">
+                                                <rect key="frame" x="34.666666666666657" y="64" width="294" height="63.666666666666657"/>
+                                                <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="42"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oji2" translatesAutoresizingMaskIntoConstraints="NO" id="HCI-mU-lI3">
+                                        <rect key="frame" x="15" y="160.33333333333331" width="363" height="255.66666666666669"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mZQ-J8-aaK" firstAttribute="leading" secondItem="5OQ-7C-pYJ" secondAttribute="leading" constant="15" id="NDH-Xy-uJT"/>
+                                    <constraint firstItem="mZQ-J8-aaK" firstAttribute="height" secondItem="5OQ-7C-pYJ" secondAttribute="height" multiplier="0.3" id="TNY-XC-eR8"/>
+                                    <constraint firstAttribute="bottom" secondItem="HCI-mU-lI3" secondAttribute="bottom" constant="10" id="awN-Nf-UCS"/>
+                                    <constraint firstItem="HCI-mU-lI3" firstAttribute="leading" secondItem="5OQ-7C-pYJ" secondAttribute="leading" constant="15" id="cv1-aH-Ok5"/>
+                                    <constraint firstAttribute="trailing" secondItem="HCI-mU-lI3" secondAttribute="trailing" constant="15" id="dnC-Ly-yDx"/>
+                                    <constraint firstItem="HCI-mU-lI3" firstAttribute="height" secondItem="5OQ-7C-pYJ" secondAttribute="height" multiplier="0.6" id="fk6-DL-HVW"/>
+                                    <constraint firstAttribute="trailing" secondItem="mZQ-J8-aaK" secondAttribute="trailing" constant="15" id="hrz-kJ-3Dh"/>
+                                    <constraint firstItem="mZQ-J8-aaK" firstAttribute="top" secondItem="5OQ-7C-pYJ" secondAttribute="top" constant="15" id="rov-oc-Qs0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.90588235294117647" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Lsh-Cd-B7e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="47K-bd-G2l"/>
+                            <constraint firstItem="5OQ-7C-pYJ" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.6" id="KHM-fy-eZm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lsh-Cd-B7e" secondAttribute="trailing" id="NgH-vi-Asi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5OQ-7C-pYJ" secondAttribute="trailing" id="QJD-7n-E5y"/>
+                            <constraint firstItem="Lsh-Cd-B7e" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="fxN-ST-HBI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5OQ-7C-pYJ" secondAttribute="bottom" id="jaa-kD-lcS"/>
+                            <constraint firstItem="Lsh-Cd-B7e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="l7a-7x-2d1"/>
+                            <constraint firstItem="5OQ-7C-pYJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pVr-yk-BUf"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="jeQ-Of-jRP"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="980.91603053435108" y="-34.507042253521128"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="0jQ-ca-hoK">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="X3L-Rg-vE8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cke-rp-vka">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="A5O-4X-XuK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5K-p1-SvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RopeImage" width="165" height="4008"/>
+        <image name="oji2" width="3508" height="2481"/>
+    </resources>
 </document>
