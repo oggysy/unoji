@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
     
@@ -25,22 +26,22 @@ class ViewController: UIViewController {
         ropeView.addGestureRecognizer(panGesture)
     }
     
-    //スワイプで呼ばれる関数
+    //ropeViewをスワイプすると呼ばれる関数
     @objc
     func didPan(_ recognizer: UIPanGestureRecognizer) {
         //ropeの初期位置をアンラップ
         guard let startPositon = ropeViewStartPosition else { return }
         //スワイプの移動量を変数pointに格納
-        let point: CGPoint = recognizer.translation(in: self.view)
+        let swipeAmountToPortrait: CGFloat = recognizer.translation(in: self.view).y
         //現在のropeの位置＋y軸の移動量を足して予測されるtop位置を変数expectedRopePositonに格納
-        let expectedRopePositon = ropeViewTopLayoutConstraint.constant + point.y
+        let expectedRopePositon = ropeViewTopLayoutConstraint.constant + swipeAmountToPortrait
         //ropeが下に移動する最大のtop位置を変数に格納
         let ropeMaxLength: CGFloat = -70
         
         //予測される移動位置がropeMaxLengthを超えていなければスワイプ量を現在位置に足す
         //超える場合はropeMaxLengthに指定
         if expectedRopePositon <= ropeMaxLength {
-            ropeViewTopLayoutConstraint.constant += point.y
+            ropeViewTopLayoutConstraint.constant += swipeAmountToPortrait
 //            print(ropeViewTopLayoutConstraint.constant)
             recognizer.setTranslation(CGPoint.zero, in: self.view)
         } else {
@@ -61,8 +62,21 @@ class ViewController: UIViewController {
         }
     }
     
-    //ここにLottieAnimationを実行する処理を書いていく
+    //水が流れるアニメーション
     private func flushWater() {
-        print("Flush Water")
+        let flushAnimation = LottieAnimationView(name:"flush_water")
+
+        flushAnimation.frame = view.frame
+        flushAnimation.contentMode = .scaleToFill
+        flushAnimation.animationSpeed = 2.5
+        flushAnimation.loopMode = .playOnce
+        flushAnimation.play()
+        
+        //メインビューにアニメーション表示
+        view.addSubview(flushAnimation)
+        //一定時間経過後にアニメーションビュー削除
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.7) {
+            flushAnimation.removeFromSuperview()
+        }
     }
 }
