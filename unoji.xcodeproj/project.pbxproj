@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1479E2B80B8BAE48B5502166 /* Pods_unoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1230B4232F62102059C5C067 /* Pods_unoji.framework */; };
 		E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E73AA8FE29ABA147001A1315 /* uzura.ttf */; };
-		E73AA90529AE4163001A1315 /* flush_water.json in Resources */ = {isa = PBXBuildFile; fileRef = E73AA90429AE4163001A1315 /* flush_water.json */; };
 		E73AA90729AE41E8001A1315 /* 125019-water-filling-up.json in Resources */ = {isa = PBXBuildFile; fileRef = E73AA90629AE41E7001A1315 /* 125019-water-filling-up.json */; };
 		E79EF5A129AA3FD10049F8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */; };
 		E79EF5A329AA3FD10049F8B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */; };
@@ -20,11 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1230B4232F62102059C5C067 /* Pods_unoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA6BC93DC767C87A9CAECA7 /* Pods-unoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unoji.release.xcconfig"; path = "Target Support Files/Pods-unoji/Pods-unoji.release.xcconfig"; sourceTree = "<group>"; };
 		E73AA8FE29ABA147001A1315 /* uzura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = uzura.ttf; sourceTree = "<group>"; };
-		E73AA90429AE4163001A1315 /* flush_water.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = flush_water.json; path = ../../flush_water.json; sourceTree = "<group>"; };
 		E73AA90629AE41E7001A1315 /* 125019-water-filling-up.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "125019-water-filling-up.json"; sourceTree = "<group>"; };
+		E78F18AA29B389A500535107 /* flush_water.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = flush_water.json; sourceTree = "<group>"; };
 		E79EF59D29AA3FD10049F8B8 /* unoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1479E2B80B8BAE48B5502166 /* Pods_unoji.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +47,6 @@
 		E71A74D45579B9C254459757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1230B4232F62102059C5C067 /* Pods_unoji.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -60,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				E79EF59F29AA3FD10049F8B8 /* unoji */,
-				E73AA90429AE4163001A1315 /* flush_water.json */,
 				E79EF59E29AA3FD10049F8B8 /* Products */,
 				FFF780A15AFEB191254AA316 /* Pods */,
 				E71A74D45579B9C254459757 /* Frameworks */,
@@ -87,6 +81,7 @@
 				E79EF5AB29AA3FD90049F8B8 /* LaunchScreen.storyboard */,
 				E79EF5AE29AA3FD90049F8B8 /* Info.plist */,
 				E73AA90629AE41E7001A1315 /* 125019-water-filling-up.json */,
+				E78F18AA29B389A500535107 /* flush_water.json */,
 			);
 			path = unoji;
 			sourceTree = "<group>";
@@ -172,7 +167,6 @@
 				E79EF5AD29AA3FD90049F8B8 /* LaunchScreen.storyboard in Resources */,
 				E79EF5AA29AA3FD90049F8B8 /* Assets.xcassets in Resources */,
 				E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */,
-				E73AA90529AE4163001A1315 /* flush_water.json in Resources */,
 				E79EF5A829AA3FD10049F8B8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
