@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     
     //水が流れるアニメーション
     private func flushWater() {
-        let flushAnimation = LottieAnimationView(name:"flush_water")
+        let flushAnimation = LottieAnimationView(name:"flush_water_animation")
 
         flushAnimation.frame = view.frame
         flushAnimation.contentMode = .scaleToFill
