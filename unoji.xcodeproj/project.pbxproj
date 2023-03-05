@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5EFAD7DB17605897CCCDD4 /* Pods_unoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */; };
 		E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E73AA8FE29ABA147001A1315 /* uzura.ttf */; };
 		E78F18AC29B39AD300535107 /* flush_water_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = E78F18AB29B39AD300535107 /* flush_water_animation.json */; };
 		E79EF5A129AA3FD10049F8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA6BC93DC767C87A9CAECA7 /* Pods-unoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unoji.release.xcconfig"; path = "Target Support Files/Pods-unoji/Pods-unoji.release.xcconfig"; sourceTree = "<group>"; };
 		E73AA8FE29ABA147001A1315 /* uzura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = uzura.ttf; sourceTree = "<group>"; };
 		E78F18AB29B39AD300535107 /* flush_water_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flush_water_animation.json; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5EFAD7DB17605897CCCDD4 /* Pods_unoji.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 		E71A74D45579B9C254459757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
