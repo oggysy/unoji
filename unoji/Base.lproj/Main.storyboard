@@ -66,17 +66,17 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oji2" translatesAutoresizingMaskIntoConstraints="NO" id="HCI-mU-lI3">
-                                        <rect key="frame" x="15" y="160.33333333333331" width="363" height="255.66666666666669"/>
+                                        <rect key="frame" x="15" y="152.66666666666671" width="363" height="263.33333333333326"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="HCI-mU-lI3" firstAttribute="leading" secondItem="5OQ-7C-pYJ" secondAttribute="leading" constant="15" id="1UO-br-Nwg"/>
                                     <constraint firstItem="mZQ-J8-aaK" firstAttribute="leading" secondItem="5OQ-7C-pYJ" secondAttribute="leading" constant="15" id="NDH-Xy-uJT"/>
+                                    <constraint firstItem="HCI-mU-lI3" firstAttribute="top" secondItem="mZQ-J8-aaK" secondAttribute="bottom" constant="10" id="RJF-Jp-1ZK"/>
                                     <constraint firstItem="mZQ-J8-aaK" firstAttribute="height" secondItem="5OQ-7C-pYJ" secondAttribute="height" multiplier="0.3" id="TNY-XC-eR8"/>
-                                    <constraint firstAttribute="bottom" secondItem="HCI-mU-lI3" secondAttribute="bottom" constant="10" id="awN-Nf-UCS"/>
-                                    <constraint firstItem="HCI-mU-lI3" firstAttribute="leading" secondItem="5OQ-7C-pYJ" secondAttribute="leading" constant="15" id="cv1-aH-Ok5"/>
-                                    <constraint firstAttribute="trailing" secondItem="HCI-mU-lI3" secondAttribute="trailing" constant="15" id="dnC-Ly-yDx"/>
-                                    <constraint firstItem="HCI-mU-lI3" firstAttribute="height" secondItem="5OQ-7C-pYJ" secondAttribute="height" multiplier="0.6" id="fk6-DL-HVW"/>
+                                    <constraint firstAttribute="bottom" secondItem="HCI-mU-lI3" secondAttribute="bottom" constant="10" id="gkU-Rr-Di3"/>
                                     <constraint firstAttribute="trailing" secondItem="mZQ-J8-aaK" secondAttribute="trailing" constant="15" id="hrz-kJ-3Dh"/>
+                                    <constraint firstAttribute="trailing" secondItem="HCI-mU-lI3" secondAttribute="trailing" constant="15" id="pjZ-U6-wwc"/>
                                     <constraint firstItem="mZQ-J8-aaK" firstAttribute="top" secondItem="5OQ-7C-pYJ" secondAttribute="top" constant="15" id="rov-oc-Qs0"/>
                                 </constraints>
                             </view>
