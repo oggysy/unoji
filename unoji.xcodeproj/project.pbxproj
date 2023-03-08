@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F5EFAD7DB17605897CCCDD4 /* Pods_unoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */; };
 		E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E73AA8FE29ABA147001A1315 /* uzura.ttf */; };
-		E73AA90129ABA1D9001A1315 /* 3.svg in Resources */ = {isa = PBXBuildFile; fileRef = E73AA90029ABA1D9001A1315 /* 3.svg */; };
+		E78F18AC29B39AD300535107 /* flush_water_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = E78F18AB29B39AD300535107 /* flush_water_animation.json */; };
 		E79EF5A129AA3FD10049F8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */; };
 		E79EF5A329AA3FD10049F8B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */; };
 		E79EF5A529AA3FD10049F8B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79EF5A429AA3FD10049F8B8 /* ViewController.swift */; };
@@ -18,8 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA6BC93DC767C87A9CAECA7 /* Pods-unoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unoji.release.xcconfig"; path = "Target Support Files/Pods-unoji/Pods-unoji.release.xcconfig"; sourceTree = "<group>"; };
 		E73AA8FE29ABA147001A1315 /* uzura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = uzura.ttf; sourceTree = "<group>"; };
-		E73AA90029ABA1D9001A1315 /* 3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 3.svg; sourceTree = "<group>"; };
+		E78F18AB29B39AD300535107 /* flush_water_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flush_water_animation.json; sourceTree = "<group>"; };
 		E79EF59D29AA3FD10049F8B8 /* unoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		E79EF5A929AA3FD90049F8B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E79EF5AC29AA3FD90049F8B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E79EF5AE29AA3FD90049F8B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED0ED81A3E0CEF00FDF5F593 /* Pods-unoji.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unoji.debug.xcconfig"; path = "Target Support Files/Pods-unoji/Pods-unoji.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5EFAD7DB17605897CCCDD4 /* Pods_unoji.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E71A74D45579B9C254459757 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E79EF59429AA3FD10049F8B8 = {
 			isa = PBXGroup;
 			children = (
 				E79EF59F29AA3FD10049F8B8 /* unoji */,
 				E79EF59E29AA3FD10049F8B8 /* Products */,
+				FFF780A15AFEB191254AA316 /* Pods */,
+				E71A74D45579B9C254459757 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,9 +81,9 @@
 				E79EF5A429AA3FD10049F8B8 /* ViewController.swift */,
 				E79EF5A629AA3FD10049F8B8 /* Main.storyboard */,
 				E79EF5A929AA3FD90049F8B8 /* Assets.xcassets */,
-				E73AA90029ABA1D9001A1315 /* 3.svg */,
 				E79EF5AB29AA3FD90049F8B8 /* LaunchScreen.storyboard */,
 				E79EF5AE29AA3FD90049F8B8 /* Info.plist */,
+				E78F18AB29B39AD300535107 /* flush_water_animation.json */,
 			);
 			path = unoji;
 			sourceTree = "<group>";
@@ -81,6 +96,15 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		FFF780A15AFEB191254AA316 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED0ED81A3E0CEF00FDF5F593 /* Pods-unoji.debug.xcconfig */,
+				ABA6BC93DC767C87A9CAECA7 /* Pods-unoji.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E79EF5B129AA3FD90049F8B8 /* Build configuration list for PBXNativeTarget "unoji" */;
 			buildPhases = (
+				9390E2E20A1FDD9DBFD378CB /* [CP] Check Pods Manifest.lock */,
 				E79EF59929AA3FD10049F8B8 /* Sources */,
 				E79EF59A29AA3FD10049F8B8 /* Frameworks */,
 				E79EF59B29AA3FD10049F8B8 /* Resources */,
+				97AD91F00B7BBB560ABE9CAD /* [CP] Embed Pods Frameworks */,
+				28C788DE29B625440020A835 /* Run SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -142,12 +169,73 @@
 				E79EF5AD29AA3FD90049F8B8 /* LaunchScreen.storyboard in Resources */,
 				E79EF5AA29AA3FD90049F8B8 /* Assets.xcassets in Resources */,
 				E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */,
+				E78F18AC29B39AD300535107 /* flush_water_animation.json in Resources */,
 				E79EF5A829AA3FD10049F8B8 /* Main.storyboard in Resources */,
-				E73AA90129ABA1D9001A1315 /* 3.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28C788DE29B625440020A835 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format # 自動修正の有効化\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		9390E2E20A1FDD9DBFD378CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-unoji-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97AD91F00B7BBB560ABE9CAD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E79EF59929AA3FD10049F8B8 /* Sources */ = {
@@ -298,6 +386,7 @@
 		};
 		E79EF5B229AA3FD90049F8B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED0ED81A3E0CEF00FDF5F593 /* Pods-unoji.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -327,6 +416,7 @@
 		};
 		E79EF5B329AA3FD90049F8B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABA6BC93DC767C87A9CAECA7 /* Pods-unoji.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
