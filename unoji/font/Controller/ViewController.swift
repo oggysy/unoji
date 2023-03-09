@@ -17,17 +17,20 @@ class ViewController: UIViewController {
     private var ropeViewStartPosition: CGFloat?
     //　ropeが下に移動する最大のtop位置を変数に格納
     private let ropeMaxLength: CGFloat = -70
-
     var washTimeModel = WashTimeModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateView(notification:)),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: nil
+        )
         configure()
     }
-
     //　ropeViewをスワイプすると呼ばれる関数
     @objc
     func didPan(_ recognizer: UIPanGestureRecognizer) {
-        //　ropeの初期位置をアンラップ
         guard let startPositon = ropeViewStartPosition else {
             return
         }
@@ -35,7 +38,6 @@ class ViewController: UIViewController {
         let swipeAmountToPortrait = recognizer.translation(in: self.view).y
         //　現在のropeの位置＋y軸の移動量を足して予測されるtop位置を変数expectedRopePositonに格納
         let expectedRopePositon = ropeViewTopLayoutConstraint.constant + swipeAmountToPortrait
-
         //　予測される移動位置がropeMaxLengthを超えていなければスワイプ量を現在位置に足す
         //　超える場合はropeMaxLengthに指定
         if expectedRopePositon <= ropeMaxLength {
@@ -45,12 +47,13 @@ class ViewController: UIViewController {
         } else {
             ropeViewTopLayoutConstraint.constant = ropeMaxLength
         }
-
         //　スワイプ終了時に呼ばれる処理
         if recognizer.state == .ended {
-            //　もしスワイプ終了時にropeの位置がropeMaxLengthになっていればwashTimeModelのwashTimeを現在日時に設定し、水が流れるアニメーション実行
+            //　もしスワイプ終了時にropeの位置がropeMaxLengthになっていれば以下の処理実行
             if ropeViewTopLayoutConstraint.constant == ropeMaxLength {
+                // アクションの時間をModelに記録
                 washTimeModel.washTime = Date()
+                // 水を流すアニメーション実行
                 flushWater()
             }
             //　ropeを初期位置に戻し、animationしながら元の位置に戻る
@@ -76,15 +79,11 @@ class ViewController: UIViewController {
         flushAnimation.play()
         //　一定時間経過後に以下の処理
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.7) {
-            self.updateView()
-            self.firstAnimation()
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                self.updateView()
-            }
+            self.updateView()// Viewを更新
+            self.firstAnimation()// ふわっと出現するアニメーション
             flushAnimation.removeFromSuperview()
         }
     }
-
     // viewDidLoad時に行う処理
     private func configure() {
         ropeViewStartPosition = ropeViewTopLayoutConstraint.constant
@@ -95,13 +94,15 @@ class ViewController: UIViewController {
         )
         ropeView.addGestureRecognizer(panGesture)
     }
-
     // 経過時間とメインイラストのviewを更新
-    private func updateView() {
+    func updateView() {
         mainIllustrationImageView.image = UIImage(named: washTimeModel.displayIllustration)
         elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay()
     }
-
+    // willEnterForegroundNotification用のupdateview
+    @objc func updateView(notification: Notification) {
+        updateView()
+    }
     // メインイラストがふわっと出現するアニメーション
     private func firstAnimation() {
         mainIllustrationImageView.alpha = 0.0

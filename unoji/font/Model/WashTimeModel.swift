@@ -18,26 +18,24 @@ class WashTimeModel {
     // 経過時間によってイラストの名前を分岐して返す
     var displayIllustration: String {
         switch elapsedTime {
-        case 0...10:
+        case 0...43200:// 0~12時間はbaby
             return "baby"
-        case 11...20:
+        case 43201...86400:// 12~24時間はboy
             return "boy"
-        case 21...30:
+        case 86401...172800:// 24~48時間はoji1
             return "oji1"
-        case 31...:
-            return "oji2"
+        case 172801...:
+            return "oji2"// 48時間以上はoji2
         default:
             return "baby"
         }
     }
 
-    // 経過時間(秒数)を日時分秒に変換
+    // 経過時間(秒数)を00日00時間の形式に変換
     func elapsedTimeConvertForDisplay() -> String {
         let days = elapsedTime / 86400
         let hours = (elapsedTime % 86400) / 3600
-        let minutes = (elapsedTime % 3600) / 60
-        let seconds = elapsedTime % 60
-        let formattedTime = String(format: "%02d日%02d時間%02d分%02d秒", days, hours, minutes, seconds)
-        return formattedTime
+        let formattedTime = String(format: "%02d日%02d時間", days, hours)
+        return "\(formattedTime)経過"
     }
 }
