@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F5EFAD7DB17605897CCCDD4 /* Pods_unoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */; };
+		2803109D29B8BF470096AB12 /* WashTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803109C29B8BF470096AB12 /* WashTimeModel.swift */; };
+		B880BF495601D04654B563BF /* Pods_unoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE7A93B43DC06ABDA2C093D /* Pods_unoji.framework */; };
 		E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E73AA8FE29ABA147001A1315 /* uzura.ttf */; };
 		E78F18AC29B39AD300535107 /* flush_water_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = E78F18AB29B39AD300535107 /* flush_water_animation.json */; };
 		E79EF5A129AA3FD10049F8B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2803109C29B8BF470096AB12 /* WashTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashTimeModel.swift; sourceTree = "<group>"; };
+		6FE7A93B43DC06ABDA2C093D /* Pods_unoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA6BC93DC767C87A9CAECA7 /* Pods-unoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unoji.release.xcconfig"; path = "Target Support Files/Pods-unoji/Pods-unoji.release.xcconfig"; sourceTree = "<group>"; };
 		E73AA8FE29ABA147001A1315 /* uzura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = uzura.ttf; sourceTree = "<group>"; };
 		E78F18AB29B39AD300535107 /* flush_water_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flush_water_animation.json; sourceTree = "<group>"; };
@@ -39,17 +41,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F5EFAD7DB17605897CCCDD4 /* Pods_unoji.framework in Frameworks */,
+				B880BF495601D04654B563BF /* Pods_unoji.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2818F48829B8B813000270CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2803109C29B8BF470096AB12 /* WashTimeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2818F48929B8B81B000270CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E79EF5A629AA3FD10049F8B8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2818F48A29B8B823000270CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E79EF5A429AA3FD10049F8B8 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		E71A74D45579B9C254459757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				401DD6D9BE0A443C7F612131 /* Pods_unoji.framework */,
+				6FE7A93B43DC06ABDA2C093D /* Pods_unoji.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,8 +104,6 @@
 				E7B41E3729AB945300ACEAF5 /* font */,
 				E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */,
 				E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */,
-				E79EF5A429AA3FD10049F8B8 /* ViewController.swift */,
-				E79EF5A629AA3FD10049F8B8 /* Main.storyboard */,
 				E79EF5A929AA3FD90049F8B8 /* Assets.xcassets */,
 				E79EF5AB29AA3FD90049F8B8 /* LaunchScreen.storyboard */,
 				E79EF5AE29AA3FD90049F8B8 /* Info.plist */,
@@ -91,6 +115,9 @@
 		E7B41E3729AB945300ACEAF5 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				2818F48829B8B813000270CE /* Model */,
+				2818F48929B8B81B000270CE /* View */,
+				2818F48A29B8B823000270CE /* Controller */,
 				E73AA8FE29ABA147001A1315 /* uzura.ttf */,
 			);
 			path = font;
@@ -116,8 +143,8 @@
 				E79EF59929AA3FD10049F8B8 /* Sources */,
 				E79EF59A29AA3FD10049F8B8 /* Frameworks */,
 				E79EF59B29AA3FD10049F8B8 /* Resources */,
-				97AD91F00B7BBB560ABE9CAD /* [CP] Embed Pods Frameworks */,
 				28C788DE29B625440020A835 /* Run SwiftLint */,
+				1EE1A16CAEFDFA99EEF3D5C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1EE1A16CAEFDFA99EEF3D5C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		28C788DE29B625440020A835 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -218,23 +262,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		97AD91F00B7BBB560ABE9CAD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-unoji/Pods-unoji-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E79EF5A529AA3FD10049F8B8 /* ViewController.swift in Sources */,
+				2803109D29B8BF470096AB12 /* WashTimeModel.swift in Sources */,
 				E79EF5A129AA3FD10049F8B8 /* AppDelegate.swift in Sources */,
 				E79EF5A329AA3FD10049F8B8 /* SceneDelegate.swift in Sources */,
 			);
