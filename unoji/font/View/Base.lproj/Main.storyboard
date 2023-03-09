@@ -57,7 +57,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00日00時間経過" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-KF-x34">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00日00時間経過" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-KF-x34">
                                                 <rect key="frame" x="34.666666666666657" y="64" width="294" height="63.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="uzura_font" family="uzura_font" pointSize="42"/>
                                                 <nil key="textColor"/>
@@ -96,6 +96,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="jeQ-Of-jRP"/>
                     <connections>
+                        <outlet property="elapsedTimeLabel" destination="XfC-KF-x34" id="067-tN-lHd"/>
+                        <outlet property="mainIllustrationImageView" destination="HCI-mU-lI3" id="0M0-2c-3Od"/>
                         <outlet property="ropeView" destination="7yA-aw-qg9" id="J5r-tg-5Uk"/>
                         <outlet property="ropeViewTopLayoutConstraint" destination="iji-JY-esx" id="TEA-Ga-8FJ"/>
                     </connections>
