@@ -101,6 +101,9 @@
 		E79EF59F29AA3FD10049F8B8 /* unoji */ = {
 			isa = PBXGroup;
 			children = (
+				2818F48829B8B813000270CE /* Model */,
+				2818F48929B8B81B000270CE /* View */,
+				2818F48A29B8B823000270CE /* Controller */,
 				E7B41E3729AB945300ACEAF5 /* font */,
 				E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */,
 				E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */,
@@ -115,9 +118,6 @@
 		E7B41E3729AB945300ACEAF5 /* font */ = {
 			isa = PBXGroup;
 			children = (
-				2818F48829B8B813000270CE /* Model */,
-				2818F48929B8B81B000270CE /* View */,
-				2818F48A29B8B823000270CE /* Controller */,
 				E73AA8FE29ABA147001A1315 /* uzura.ttf */,
 			);
 			path = font;

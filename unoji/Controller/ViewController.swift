@@ -97,7 +97,7 @@ class ViewController: UIViewController {
     // 経過時間とメインイラストのviewを更新
     func updateView() {
         mainIllustrationImageView.image = UIImage(named: washTimeModel.displayIllustration)
-        elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay()
+        elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay
     }
     // willEnterForegroundNotification用のupdateview
     @objc func updateView(notification: Notification) {
