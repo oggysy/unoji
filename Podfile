@@ -7,5 +7,7 @@ target 'unoji' do
 
   # Pods for unoji
 pod 'lottie-ios'
+pod 'RealmSwift' 
+pod 'FSCalendar' 
 
 end

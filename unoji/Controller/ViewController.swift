@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -14,10 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet private weak var ropeViewTopLayoutConstraint: NSLayoutConstraint!
     @IBOutlet private weak var elapsedTimeLabel: UILabel!
     @IBOutlet private weak var mainIllustrationImageView: UIImageView!
+    @IBOutlet weak var titleTextLabel: UILabel!
+
+    let realm = try! Realm()
+    var washTimeModel = WashTimeModel()
+    var timer = Timer()
     private var ropeViewStartPosition: CGFloat?
     //　ropeが下に移動する最大のtop位置を変数に格納
     private let ropeMaxLength: CGFloat = -70
-    var washTimeModel = WashTimeModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +32,11 @@ class ViewController: UIViewController {
                                                object: nil
         )
         configure()
+        //        // Realmファイルの保存先を取得する
+        //        let realmPath = Realm.Configuration.defaultConfiguration.fileURL?.path
+        //        print(realmPath ?? "Realmファイルが見つかりませんでした")
     }
+
     //　ropeViewをスワイプすると呼ばれる関数
     @objc
     func didPan(_ recognizer: UIPanGestureRecognizer) {
@@ -51,8 +60,12 @@ class ViewController: UIViewController {
         if recognizer.state == .ended {
             //　もしスワイプ終了時にropeの位置がropeMaxLengthになっていれば以下の処理実行
             if ropeViewTopLayoutConstraint.constant == ropeMaxLength {
-                // アクションの時間をModelに記録
+                //
+                updateView()
                 washTimeModel.washTime = Date()
+                washTimeModel.setWashTime()
+                saveData(data: washTimeModel)
+                washTimeModel = WashTimeModel()
                 // 水を流すアニメーション実行
                 flushWater()
             }
@@ -81,9 +94,10 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.7) {
             self.updateView()// Viewを更新
             self.firstAnimation()// ふわっと出現するアニメーション
-            flushAnimation.removeFromSuperview()
+            flushAnimation.removeFromSuperview()// flushanimation解除
         }
     }
+
     // viewDidLoad時に行う処理
     private func configure() {
         ropeViewStartPosition = ropeViewTopLayoutConstraint.constant
@@ -93,12 +107,40 @@ class ViewController: UIViewController {
             action: #selector(didPan(_:))
         )
         ropeView.addGestureRecognizer(panGesture)
+        elapsedTimeLabel.textColor = .darkGray
+        titleTextLabel.textColor = .darkGray
+        // スワイプ誘導の矢印を表示させる
+        let arrowAnimation = {
+            let view = LottieAnimationView(name: "arrow")
+            view.frame = CGRect(x: 50, y: 90, width: 50, height: 80)
+            view.contentMode = .scaleToFill
+            view.loopMode = .loop
+            return view
+        }()
+        view.addSubview(arrowAnimation)
+        view.sendSubviewToBack(arrowAnimation)
+        arrowAnimation.play()
     }
-    // 経過時間とメインイラストのviewを更新
+    // 経過時間とメインイラストの値を更新しviewも更新
     func updateView() {
+        //　この関数が呼ばれたらtimerをストップ
+        timer.invalidate()
+        // 変数lastTimeに前回のwashTime変数の値を代入する
+        guard let lastTime = realm.objects(WashTimeModel.self).last?.washTime else { //　nilの場合は現在の時間を入れてsetValue関数を呼び、Viewを更新
+            washTimeModel.setValue(lastTime: Date())
+            mainIllustrationImageView.image = UIImage(named: washTimeModel.displayIllustration)
+            elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay()
+            return }
+        // 前回の記録がある場合はlastTimeを渡してsetValu関数を呼び、Viewを更新
+        washTimeModel.setValue(lastTime: lastTime)
         mainIllustrationImageView.image = UIImage(named: washTimeModel.displayIllustration)
-        elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay
+        elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay()
+        // 10分後にupdateViewが呼ばれるようにする
+        timer = Timer.scheduledTimer(withTimeInterval: 600, repeats: false, block: { _ in
+            self.updateView()
+        })
     }
+
     // willEnterForegroundNotification用のupdateview
     @objc func updateView(notification: Notification) {
         updateView()
@@ -109,5 +151,16 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 2.0, delay: 1.0, options: [.curveEaseIn], animations: {
             self.mainIllustrationImageView.alpha = 1.0
         }, completion: nil)
+    }
+
+    // WashTimeModelを引数にRealmに保存
+    func saveData(data: WashTimeModel) {
+        do {
+            try realm.write {
+                realm.add(data)
+            }
+        } catch {
+            print(error)
+        }
     }
 }
