@@ -32,9 +32,6 @@ class ViewController: UIViewController {
                                                object: nil
         )
         configure()
-        //        // Realmファイルの保存先を取得する
-        //        let realmPath = Realm.Configuration.defaultConfiguration.fileURL?.path
-        //        print(realmPath ?? "Realmファイルが見つかりませんでした")
     }
 
     //　ropeViewをスワイプすると呼ばれる関数
@@ -60,12 +57,8 @@ class ViewController: UIViewController {
         if recognizer.state == .ended {
             //　もしスワイプ終了時にropeの位置がropeMaxLengthになっていれば以下の処理実行
             if ropeViewTopLayoutConstraint.constant == ropeMaxLength {
-                //
                 updateView()
-                washTimeModel.washTime = Date()
-                washTimeModel.setWashTime()
-                saveData(data: washTimeModel)
-                washTimeModel = WashTimeModel()
+                washTimeModel = WashTimeModel.saveAndCreateWashTime(model: washTimeModel)
                 // 水を流すアニメーション実行
                 flushWater()
             }
@@ -121,20 +114,16 @@ class ViewController: UIViewController {
         view.sendSubviewToBack(arrowAnimation)
         arrowAnimation.play()
     }
+
     // 経過時間とメインイラストの値を更新しviewも更新
     func updateView() {
         //　この関数が呼ばれたらtimerをストップ
         timer.invalidate()
-        // 変数lastTimeに前回のwashTime変数の値を代入する
-        guard let lastTime = realm.objects(WashTimeModel.self).last?.washTime else { //　nilの場合は現在の時間を入れてsetValue関数を呼び、Viewを更新
-            washTimeModel.setValue(lastTime: Date())
-            mainIllustrationImageView.image = UIImage(named: washTimeModel.displayIllustration)
-            elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay()
-            return }
-        // 前回の記録がある場合はlastTimeを渡してsetValu関数を呼び、Viewを更新
-        washTimeModel.setValue(lastTime: lastTime)
-        mainIllustrationImageView.image = UIImage(named: washTimeModel.displayIllustration)
-        elapsedTimeLabel.text = washTimeModel.elapsedTimeConvertForDisplay()
+        // 変数lastTimeに前回のwashTime変数の値を代入する nilの場合は今の時刻
+        let lastTime = realm.objects(WashTimeModel.self).last?.washTime ?? Date()
+        washTimeModel.update(by: lastTime)
+        mainIllustrationImageView.image = UIImage(named: washTimeModel.setDisplayIlustration())
+        elapsedTimeLabel.text = washTimeModel.formatElapsedTime()
         // 10分後にupdateViewが呼ばれるようにする
         timer = Timer.scheduledTimer(withTimeInterval: 600, repeats: false, block: { _ in
             self.updateView()
@@ -145,22 +134,12 @@ class ViewController: UIViewController {
     @objc func updateView(notification: Notification) {
         updateView()
     }
+
     // メインイラストがふわっと出現するアニメーション
     private func firstAnimation() {
         mainIllustrationImageView.alpha = 0.0
         UIView.animate(withDuration: 2.0, delay: 1.0, options: [.curveEaseIn], animations: {
             self.mainIllustrationImageView.alpha = 1.0
         }, completion: nil)
-    }
-
-    // WashTimeModelを引数にRealmに保存
-    func saveData(data: WashTimeModel) {
-        do {
-            try realm.write {
-                realm.add(data)
-            }
-        } catch {
-            print(error)
-        }
     }
 }

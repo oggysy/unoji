@@ -77,6 +77,15 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		28DB7EC429CC8EE7005462D0 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				E78F18AB29B39AD300535107 /* flush_water_animation.json */,
+				28DB7EC229C88B9A005462D0 /* arrow.json */,
+			);
+			path = LottieAnimation;
+			sourceTree = "<group>";
+		};
 		E71A74D45579B9C254459757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,14 +118,13 @@
 				2818F48829B8B813000270CE /* Model */,
 				2818F48929B8B81B000270CE /* View */,
 				2818F48A29B8B823000270CE /* Controller */,
-				E7B41E3729AB945300ACEAF5 /* font */,
 				E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */,
 				E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */,
 				E79EF5A929AA3FD90049F8B8 /* Assets.xcassets */,
 				E79EF5AB29AA3FD90049F8B8 /* LaunchScreen.storyboard */,
 				E79EF5AE29AA3FD90049F8B8 /* Info.plist */,
-				E78F18AB29B39AD300535107 /* flush_water_animation.json */,
-				28DB7EC229C88B9A005462D0 /* arrow.json */,
+				E7B41E3729AB945300ACEAF5 /* font */,
+				28DB7EC429CC8EE7005462D0 /* LottieAnimation */,
 			);
 			path = unoji;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		1EE1A16CAEFDFA99EEF3D5C9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
