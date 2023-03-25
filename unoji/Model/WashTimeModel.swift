@@ -14,12 +14,12 @@ class WashTimeModel: Object {
 }
 
 extension WashTimeModel {
-    // 最後にRealmに記録されたデータを元にelapsedTimeとdisplayIllustrationの値を更新する
+    // 最後にRealmに記録されたデータを元にelapsedTimeの値を更新する
     func update(by lastTime: Date) {
         elapsedTime = Int(abs(lastTime.timeIntervalSinceNow))
     }
 
-    // 経過時間によってイラストの名前を分岐してdisplayIllustrationに代入
+    // 経過時間によってイラストの名前を文字列を返す
     func setDisplayIlustration() -> String {
         let elapsedHour = elapsedTime / 3600
         switch elapsedHour {
