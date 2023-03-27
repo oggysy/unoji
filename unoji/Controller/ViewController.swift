@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet private weak var mainIllustrationImageView: UIImageView!
     @IBOutlet weak var titleTextLabel: UILabel!
 
-    let realm = try! Realm()
     var washTimeModel = WashTimeModel()
     var timer = Timer()
     private var ropeViewStartPosition: CGFloat?
@@ -119,6 +118,7 @@ class ViewController: UIViewController {
     func updateView() {
         //　この関数が呼ばれたらtimerをストップ
         timer.invalidate()
+        let realm = try! Realm()
         // 変数lastTimeに前回のwashTime変数の値を代入する nilの場合は今の時刻
         let lastTime = realm.objects(WashTimeModel.self).last?.washTime ?? Date()
         washTimeModel.update(by: lastTime)

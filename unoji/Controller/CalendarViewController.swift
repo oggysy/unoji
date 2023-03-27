@@ -15,10 +15,22 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
     private var objects: Results<WashTimeModel>?
     private var notificationToken: NotificationToken?
     private var df = DateFormatter()
+    private var currentDay: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let currentDay = currentDay else {
+            return
+        }
+        // currentDayが今日の日付になっていなければcalendarをリロード
+        if !Calendar.current.isDateInToday(currentDay) {
+            calendar.reloadData()
+        }
     }
 
     deinit {
@@ -28,7 +40,6 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 
     // 日付のセルに画像を表示させる
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-        df.dateFormat = "yyyy-MM-dd"
         guard let objects = objects else {
             return nil
         }
@@ -36,8 +47,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         guard let matchObject = matchObject else {
             return nil
         }
-        let image = UIImage(named: matchObject.setDisplayIlustration() + "icon")
-        return image
+        return UIImage(named: matchObject.setDisplayIlustration() + "icon")
     }
 
     // 日付のセルに枠線と背景色をつける
@@ -48,6 +58,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
         cell.layer.backgroundColor = UIColor.init(red: 255 / 255, green: 249 / 255, blue: 230 / 255, alpha: 0.4).cgColor
 
         if Calendar.current.isDateInToday(date) {
+            currentDay = date
             cell.layer.borderColor = UIColor.init(red: 236 / 255, green: 85 / 255, blue: 120 / 255, alpha: 1.0).cgColor
             cell.layer.borderWidth = 2.0
         }
@@ -56,6 +67,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 
     // viewDidLoad時に行う処理
     private func configure() {
+        df.dateFormat = "yyyy-MM-dd"
         objects = realm.objects(WashTimeModel.self)
         // RealmのNotificationを設定
         notificationToken = objects?.observe { [weak self] (changes: RealmCollectionChange) in
@@ -65,11 +77,9 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
             switch changes {
             case .initial:
                 // 初期データの読み込み
-                print("initial")
                 self.calendar.reloadData()
             case .update:
                 // データの更新
-                print("update")
                 self.calendar.reloadData()
             case .error(let error):
                 // エラー
