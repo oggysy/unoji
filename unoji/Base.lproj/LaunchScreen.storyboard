@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ロード" translatesAutoresizingMaskIntoConstraints="NO" id="1iT-9t-Xnr">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load" translatesAutoresizingMaskIntoConstraints="NO" id="1iT-9t-Xnr">
                                 <rect key="frame" x="71.666666666666686" y="336" width="250" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="0rz-mA-Mjz"/>
@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="load" width="250" height="176.5"/>
         <image name="title" width="72" height="16.5"/>
-        <image name="ロード" width="250" height="176.5"/>
     </resources>
 </document>
