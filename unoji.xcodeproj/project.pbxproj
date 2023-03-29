@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2803109D29B8BF470096AB12 /* WashTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2803109C29B8BF470096AB12 /* WashTimeModel.swift */; };
+		287FACC629C31BDB001CA3F0 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287FACC529C31BDB001CA3F0 /* CalendarViewController.swift */; };
+		28DB7EC329C88B9A005462D0 /* arrow.json in Resources */ = {isa = PBXBuildFile; fileRef = 28DB7EC229C88B9A005462D0 /* arrow.json */; };
+		28DB7ECA29D32185005462D0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 28DB7EC929D32185005462D0 /* Settings.bundle */; };
 		B880BF495601D04654B563BF /* Pods_unoji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE7A93B43DC06ABDA2C093D /* Pods_unoji.framework */; };
 		E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E73AA8FE29ABA147001A1315 /* uzura.ttf */; };
 		E78F18AC29B39AD300535107 /* flush_water_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = E78F18AB29B39AD300535107 /* flush_water_animation.json */; };
@@ -21,6 +24,9 @@
 
 /* Begin PBXFileReference section */
 		2803109C29B8BF470096AB12 /* WashTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashTimeModel.swift; sourceTree = "<group>"; };
+		287FACC529C31BDB001CA3F0 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		28DB7EC229C88B9A005462D0 /* arrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = arrow.json; sourceTree = "<group>"; };
+		28DB7EC929D32185005462D0 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		6FE7A93B43DC06ABDA2C093D /* Pods_unoji.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unoji.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA6BC93DC767C87A9CAECA7 /* Pods-unoji.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unoji.release.xcconfig"; path = "Target Support Files/Pods-unoji/Pods-unoji.release.xcconfig"; sourceTree = "<group>"; };
 		E73AA8FE29ABA147001A1315 /* uzura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = uzura.ttf; sourceTree = "<group>"; };
@@ -68,8 +74,18 @@
 			isa = PBXGroup;
 			children = (
 				E79EF5A429AA3FD10049F8B8 /* ViewController.swift */,
+				287FACC529C31BDB001CA3F0 /* CalendarViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		28DB7EC429CC8EE7005462D0 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				E78F18AB29B39AD300535107 /* flush_water_animation.json */,
+				28DB7EC229C88B9A005462D0 /* arrow.json */,
+			);
+			path = LottieAnimation;
 			sourceTree = "<group>";
 		};
 		E71A74D45579B9C254459757 /* Frameworks */ = {
@@ -101,16 +117,17 @@
 		E79EF59F29AA3FD10049F8B8 /* unoji */ = {
 			isa = PBXGroup;
 			children = (
+				28DB7EC929D32185005462D0 /* Settings.bundle */,
 				2818F48829B8B813000270CE /* Model */,
 				2818F48929B8B81B000270CE /* View */,
 				2818F48A29B8B823000270CE /* Controller */,
-				E7B41E3729AB945300ACEAF5 /* font */,
 				E79EF5A029AA3FD10049F8B8 /* AppDelegate.swift */,
 				E79EF5A229AA3FD10049F8B8 /* SceneDelegate.swift */,
 				E79EF5A929AA3FD90049F8B8 /* Assets.xcassets */,
 				E79EF5AB29AA3FD90049F8B8 /* LaunchScreen.storyboard */,
 				E79EF5AE29AA3FD90049F8B8 /* Info.plist */,
-				E78F18AB29B39AD300535107 /* flush_water_animation.json */,
+				E7B41E3729AB945300ACEAF5 /* font */,
+				28DB7EC429CC8EE7005462D0 /* LottieAnimation */,
 			);
 			path = unoji;
 			sourceTree = "<group>";
@@ -145,6 +162,7 @@
 				E79EF59B29AA3FD10049F8B8 /* Resources */,
 				28C788DE29B625440020A835 /* Run SwiftLint */,
 				1EE1A16CAEFDFA99EEF3D5C9 /* [CP] Embed Pods Frameworks */,
+				28DB7EC629D31FD2005462D0 /* License Plist */,
 			);
 			buildRules = (
 			);
@@ -193,11 +211,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DB7ECA29D32185005462D0 /* Settings.bundle in Resources */,
 				E79EF5AD29AA3FD90049F8B8 /* LaunchScreen.storyboard in Resources */,
 				E79EF5AA29AA3FD90049F8B8 /* Assets.xcassets in Resources */,
 				E73AA8FF29ABA147001A1315 /* uzura.ttf in Resources */,
 				E78F18AC29B39AD300535107 /* flush_water_animation.json in Resources */,
 				E79EF5A829AA3FD10049F8B8 /* Main.storyboard in Resources */,
+				28DB7EC329C88B9A005462D0 /* arrow.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +226,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		1EE1A16CAEFDFA99EEF3D5C9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -240,6 +261,25 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format # 自動修正の有効化\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		28DB7EC629D31FD2005462D0 /* License Plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "License Plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\nfi\n";
+		};
 		9390E2E20A1FDD9DBFD378CB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -269,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				287FACC629C31BDB001CA3F0 /* CalendarViewController.swift in Sources */,
 				E79EF5A529AA3FD10049F8B8 /* ViewController.swift in Sources */,
 				2803109D29B8BF470096AB12 /* WashTimeModel.swift in Sources */,
 				E79EF5A129AA3FD10049F8B8 /* AppDelegate.swift in Sources */,
@@ -348,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -402,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -423,12 +464,12 @@
 				DEVELOPMENT_TEAM = N2SYM75F37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = unoji/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -436,9 +477,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusuke.unoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,12 +497,12 @@
 				DEVELOPMENT_TEAM = N2SYM75F37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = unoji/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,9 +510,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yusuke.unoji;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

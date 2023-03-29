@@ -6,6 +6,9 @@ target 'unoji' do
    use_frameworks!
 
   # Pods for unoji
+pod 'LicensePlist'
 pod 'lottie-ios'
+pod 'RealmSwift' 
+pod 'FSCalendar' 
 
 end
