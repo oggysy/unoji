@@ -40,10 +40,7 @@ class CalendarViewController: UIViewController, FSCalendarDataSource, FSCalendar
 
     // 日付のセルに画像を表示させる
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-        guard let objects = objects else {
-            return nil
-        }
-        let matchObject = objects.first(where: { $0.formatWashTime() == df.string(from: date) })
+        let matchObject = objects?.first(where: { $0.formatWashTime() == df.string(from: date) })
         guard let matchObject = matchObject else {
             return nil
         }

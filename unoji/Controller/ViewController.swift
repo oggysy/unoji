@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     var washTimeModel = WashTimeModel()
     var timer = Timer()
     private var ropeViewStartPosition: CGFloat?
-    //　ropeが下に移動する最大のtop位置を変数に格納
     private let ropeMaxLength: CGFloat = -70
 
     override func viewDidLoad() {
@@ -39,12 +38,8 @@ class ViewController: UIViewController {
         guard let startPositon = ropeViewStartPosition else {
             return
         }
-        //　スワイプの移動量を変数pointに格納
         let swipeAmountToPortrait = recognizer.translation(in: self.view).y
-        //　現在のropeの位置＋y軸の移動量を足して予測されるtop位置を変数expectedRopePositonに格納
         let expectedRopePositon = ropeViewTopLayoutConstraint.constant + swipeAmountToPortrait
-        //　予測される移動位置がropeMaxLengthを超えていなければスワイプ量を現在位置に足す
-        //　超える場合はropeMaxLengthに指定
         if expectedRopePositon <= ropeMaxLength {
             ropeViewTopLayoutConstraint.constant += swipeAmountToPortrait
             //            print(ropeViewTopLayoutConstraint.constant)
@@ -54,7 +49,6 @@ class ViewController: UIViewController {
         }
         //　スワイプ終了時に呼ばれる処理
         if recognizer.state == .ended {
-            //　もしスワイプ終了時にropeの位置がropeMaxLengthになっていれば以下の処理実行
             if ropeViewTopLayoutConstraint.constant == ropeMaxLength {
                 updateView()
                 washTimeModel = WashTimeModel.saveAndCreateWashTime(model: washTimeModel)
