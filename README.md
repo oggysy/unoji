@@ -21,14 +21,15 @@ App Store:https://apps.apple.com/jp/app/%E3%81%86%E3%82%93%E3%82%AA%E3%82%B8/id6
 　　pod install
 
 ## 開発環境
-項目	バージョン
-Xcode	14.1
-Swift	5.7.2
-iOS	15.0以上
-CocoaPods	1.12.0
-Lottie	2.0
-RealmSwift	10.36.0
-FSCalendar	2.8.4
+| 項目 | バージョン |
+| ---- | -------- |
+| Xcode | 14.1 |
+| Swift	| 5.7.2 |
+| iOS	| 15.0以上 |
+| CocoaPods	| 1.12.0 |
+| Lottie | 2.0 |
+| RealmSwift | 10.36.0 |
+| FSCalendar | 2.8.4 |
 
 # 使用ライブラリ
 ・LicensePlist
