@@ -1,7 +1,7 @@
-# プロジェクト名
+## プロジェクト名
 ### うんオジ
 
-# 概要
+## 概要
 シンプルな排便管理アプリです。
 経過時間によってイラストが変化します。
 画面上の紐を引っ張ると、水が流れてイラストがリセットされます。
@@ -10,7 +10,7 @@ App Store:https://apps.apple.com/jp/app/%E3%81%86%E3%82%93%E3%82%AA%E3%82%B8/id6
 
 ![aa2606c787dcdfdcc401e6ced273d0e3](https://user-images.githubusercontent.com/93628118/229288098-6a6e4cae-c0e4-471d-8445-fab70bb50fea.gif)
 
-# 環境構築
+## 環境構築
 1. リポジトリをclone
 　　git clone https://github.com/oggysy/unoji.git
 1. cocoapodsをインストール
@@ -20,7 +20,7 @@ App Store:https://apps.apple.com/jp/app/%E3%81%86%E3%82%93%E3%82%AA%E3%82%B8/id6
 4. ライブラリのインストール
 　　pod install
 
-## 開発環境
+### 開発環境
 | 項目 | バージョン |
 | ---- | -------- |
 | Xcode | 14.1 |
@@ -31,7 +31,7 @@ App Store:https://apps.apple.com/jp/app/%E3%81%86%E3%82%93%E3%82%AA%E3%82%B8/id6
 | RealmSwift | 10.36.0 |
 | FSCalendar | 2.8.4 |
 
-# 使用ライブラリ
+## 使用ライブラリ
 ・LicensePlist
 使用ライブラリのライセンス情報を作成するライブラリ
 ・Lottie
@@ -41,7 +41,7 @@ App Store:https://apps.apple.com/jp/app/%E3%81%86%E3%82%93%E3%82%AA%E3%82%B8/id6
 ・FSCalendar
 カレンダーUIライブラリ
 
-# バージョン管理
+## バージョン管理
 GitHubを使用
-# デザインパターン
+## デザインパターン
 MVCモデルを使用
